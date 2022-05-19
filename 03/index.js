@@ -1,3 +1,4 @@
+
 const carrinho = {
     nomeDoCliente: "Guido Bernal",
     produtos: [
@@ -13,5 +14,19 @@ const carrinho = {
             qtd: 2,
             precoUnit: 5000
         }
-    ]
+    ],
+
+    imprimirResumo: function () {
+        let totalItens = 0;
+        let totalPagar = 0;
+        for (let itens of carrinho.produtos) {
+            totalItens += itens.qtd;
+            totalPagar += itens.qtd * itens.precoUnit;
+        }
+        console.log(`Cliente: ${this.nomeDoCliente}
+Total de intens: ${totalItens};
+Total a pagar: RS${totalPagar}`);
+    }
 }
+
+carrinho.imprimirResumo();
